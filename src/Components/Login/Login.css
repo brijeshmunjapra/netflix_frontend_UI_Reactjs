@@ -3,7 +3,7 @@
   height: 100%;
   background: url("https://assets.nflxext.com/ffe/siteui/vlv3/2e884ce2-da1c-4501-ab9a-10c534d30975/6973a9ea-02b2-4de9-9006-d7d224c9b75d/IN-en-20230327-popsignuptwoweeks-perspective_alpha_website_large.jpg");
   background-size: cover;
-  }
+}
 .login-screen-logo {
   position: fixed;
   left: 0;
@@ -11,13 +11,18 @@
   object-fit: contain;
   padding-left: 30px;
   padding-top: 20px;
-
 }
-.login-screen-gradient{
-    width: 100%;
-    z-index: 1;
-    height: 100vh;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%)
+.login-screen-gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgb(0 0 0 / 40%);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) ,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
 .signin-button {
@@ -31,20 +36,73 @@
   background-color: #e50914;
   border: none;
   cursor: pointer;
-  border-radius: 0.25rem
+  border-radius: 0.25rem;
 }
 
-.login-screen-body{
-    position: absolute;
-    top: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: #fff;
-    z-index: 1;
-    padding: 20px;
+.signin-button:hover{
+  background: rgb(174, 14, 22);
 }
-.login-screen-body > h1{
-font-size: 3.125rem;
-margin-bottom: 20px;
+
+
+.login-screen-body {
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 1;
+}
+.login-screen-body > h1 {
+  font-size: 3.125rem;
+  padding: 20px;
+
+}
+.login-screen-body > h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+.login-screen-input{
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.login-screen-input > input{
+    width: 100%;
+    color: #fff;
+    line-height: 1.5rem;
+    padding: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.25rem;
+    background: rgba(22, 22, 22, 0.7);
+    border-color: rgba(128, 128, 128, 0.7);
+    max-width: 20rem;
+    fill: currentcolor;
+    font-size: 1rem;
+}
+
+.login-screen-input > button{
+    padding: 10px 30px;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    width: auto;
+    min-height: 3.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.login-screen-input > button:hover{
+  background: rgb(174, 14, 22);
 }
