@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
 import "./SignIn.css"
 import { auth } from '../../firebase';
+import {  createUserWithEmailAndPassword , signInWithEmailAndPassword } from 'firebase/auth'
+
 
 export default function SignIn({setSignIn}) {
 
@@ -9,12 +11,30 @@ export default function SignIn({setSignIn}) {
 
     const register = (e)=>{
         e.preventDefault();
-        setSignIn(false);
-        auth.createUserWithEmailAndPassword( )
+       
+        createUserWithEmailAndPassword(
+          auth,
+          emailRef.current.value,
+          passwordRef.current.value
+         ).then((authUser)=>{
+            console.log(authUser, "authUser registration")
+         }).catch((error)=>{
+          console.log(error.message, "error in registration")
+         })
     }
 
     const signIn = (e)=>{
         e.preventDefault();
+        signInWithEmailAndPassword(
+          auth,
+          emailRef.current.value,
+          passwordRef.current.value
+        ).then((authUser)=>{
+          console.log(authUser, "authUser login")
+       }).catch((error)=>{
+        console.log(error.message, "error in login")
+       })
+          
 
     }
   return (
@@ -23,7 +43,7 @@ export default function SignIn({setSignIn}) {
         <h1>Sign In</h1>
         <input placeholder='Email' type='email' ref={emailRef}/>
         <input placeholder='Password' type='password' ref={passwordRef}/>
-        <button type='submit'>Sign In</button>
+        <button type='submit' onClick={signIn}>Sign In</button>
 
         <h4 >
         <span className='signUp-screen-gray'>New to Netflix? </span>

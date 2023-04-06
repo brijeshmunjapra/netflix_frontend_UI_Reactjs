@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import Row from "../Row/Row";
 import Banner from "../Banner/Banner";
 import Nav from "../Nav/Nav";
-import requests from '../../requests';
-import "./Homescreen.css"
+import requests from "../../requests";
+import "./Homescreen.css";
 
 function Homescreen() {
   return (
-    <div className='homescreen'>
-    <Nav />
+    <div className="homescreen">
+      <Nav />
       <Banner />
       <Row
         title="NETFLIX ORIGINALS"
@@ -22,9 +22,8 @@ function Homescreen() {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-      
     </div>
-  )
+  );
 }
 
-export default Homescreen
+export default Homescreen;

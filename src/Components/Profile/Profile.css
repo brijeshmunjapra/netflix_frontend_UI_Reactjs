@@ -1,0 +1,24 @@
+.profile {
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.profile_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8%;
+    max-width: 800px;
+}
+.profile_info{
+    display: flex;
+    
+}
+.profile_info> img {
+    height: 100px;
+}
