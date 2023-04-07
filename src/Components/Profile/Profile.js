@@ -14,12 +14,14 @@ function Profile() {
     <div className='profile'>
       <Nav/>
       <div className='profile_body'>
-      <h1>Edit Profile</h1>
+      <h1>Profile</h1>
       <div className='profile_info'>
       <img  src={profileImg} alt="profileImg"/>
       <div className='profile_details'>
         <h2>{user.email}</h2>
         <div className='profile_plans'>
+        <h3>Plans(Current Plan: premium)</h3>
+
             <button className='profile_signout' onClick={()=>signOut(auth)}>Sign Out</button>
         </div>
       </div>
